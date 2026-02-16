@@ -8,9 +8,9 @@ const ExclusivitySection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="exclusivity" className="relative py-32 lg:py-48">
+    <section id="exclusivity" className="relative py-16 md:py-32 lg:py-48">
       <div ref={ref} className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -36,7 +36,7 @@ const ExclusivitySection = () => {
             <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">
               Exclusivity
             </p>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
               Beyond{" "}
               <span className="text-gold-gradient">Rare</span>
             </h2>

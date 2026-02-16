@@ -16,7 +16,7 @@ const HeroSection = () => {
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.6], [0.5, 0.9]);
 
   return (
-    <section ref={ref} className="relative h-[200vh]">
+    <section ref={ref} className="relative h-[150vh] md:h-[200vh]">
       <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
         {/* Background image */}
         <motion.div
@@ -54,7 +54,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 1 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-shadow-luxury"
+            className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-shadow-luxury"
           >
             <span className="text-gold-gradient">Tourbillon</span>
           </motion.h1>
@@ -72,13 +72,13 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="mt-12 flex justify-center"
+            className="mt-8 md:mt-12 flex justify-center"
           >
             <a
               href="#experience"
               className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
-              <span className="text-xs tracking-[0.3em] uppercase">Scroll to Explore</span>
+              <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase">Scroll to Explore</span>
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}

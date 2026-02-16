@@ -45,7 +45,7 @@ const FeaturesSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={statsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="bg-card p-10 text-center"
+              className="bg-card p-6 md:p-10 text-center"
             >
               <stat.icon className="w-5 h-5 text-primary mx-auto mb-4" />
               <p className="text-3xl md:text-4xl font-display font-bold text-gold-gradient mb-2">
@@ -65,25 +65,25 @@ const FeaturesSection = () => {
           initial={{ opacity: 0 }}
           animate={featuresInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
           <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">
             Engineering Excellence
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
+          <h2 className="font-display text-3xl md:text-5xl font-bold">
             Crafted Without{" "}
             <span className="text-gold-gradient">Compromise</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 40 }}
               animate={featuresInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: i * 0.15 }}
-              className="group relative bg-card border border-border p-10 hover:border-primary/30 transition-all duration-500"
+              className="group relative bg-card border border-border p-6 md:p-10 hover:border-primary/30 transition-all duration-500"
             >
               <feature.icon className="w-6 h-6 text-primary mb-6" />
               <h3 className="font-display text-2xl font-semibold mb-4">

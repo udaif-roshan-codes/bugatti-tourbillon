@@ -18,14 +18,13 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? "bg-background/80 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
-      }`}
+        }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 lg:py-5">
-        <a href="#" className="font-display text-xl lg:text-2xl tracking-[0.2em] uppercase text-gold-gradient font-semibold">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 lg:py-6">
+        <a href="#" className="font-display text-lg lg:text-2xl tracking-[0.2em] uppercase text-gold-gradient font-semibold z-50 relative">
           Bugatti
         </a>
 
@@ -52,9 +51,10 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground p-2 -mr-2 z-50 relative active:scale-95 transition-transform"
+          aria-label="Toggle menu"
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
@@ -62,22 +62,29 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 bg-background/95 backdrop-blur-2xl z-40 md:hidden flex flex-col justify-center items-center"
           >
-            <div className="flex flex-col items-center gap-6 py-8">
+            <div className="flex flex-col items-center gap-8 py-8 w-full">
               {carData.navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
+                  className="text-2xl tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors py-2"
                 >
                   {link.label}
                 </a>
               ))}
+              <a
+                href="#gallery"
+                onClick={() => setMobileOpen(false)}
+                className="mt-4 text-sm tracking-[0.15em] uppercase border border-primary/40 text-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                Discover
+              </a>
             </div>
           </motion.div>
         )}
